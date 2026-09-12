@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Test Rides &amp; Delivery | Maxwell Motorbikes</title>
+  <meta name="description" content="Book a test ride of the Maxwell Stoic in Rochester, NY, or arrange delivery to Buffalo, Syracuse, or New York City.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">MAXWELL<small>MOTORBIKES</small></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="stoic.html">The Stoic</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="stoic.html#buy">Buy — $849</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="section">
+    <div class="eyebrow">Say hello</div>
+    <h2 class="section-title">Book a test ride, or just talk bikes.</h2>
+    <p class="section-sub">The best way to understand the Stoic is to ride one. We're in Rochester, NY — come by for a spin on the canal trail, or message us about delivery.</p>
+
+    <div class="contact-grid">
+      <div>
+        <form id="contact-form" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="topic">I'm interested in</label>
+            <select id="topic" name="topic">
+              <option>Booking a test ride (Rochester)</option>
+              <option>Buying the Stoic</option>
+              <option>Delivery to Buffalo / Syracuse / NYC</option>
+              <option>Sizing help</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" placeholder="Tell us your height for sizing, where you're located, or anything else…"></textarea>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p class="fine" id="form-note" style="margin-top:12px;"></p>
+        </form>
+        <!-- To wire up the form: create a free form at formspree.io and put the
+             form ID into SITE.formspreeId in main.js -->
+      </div>
+
+      <div>
+        <div class="contact-card">
+          <h3 style="font-family:var(--font-display);margin-bottom:12px;">Direct</h3>
+          <p><strong>Email:</strong> <a href="mailto:hello@maxwellmotorbikes.com">hello@maxwellmotorbikes.com</a></p>
+          <p style="margin-top:8px;"><strong>Based in:</strong> Rochester, NY</p>
+          <div style="margin-top:20px;">
+            <div class="opt-label" style="margin-top:0;">Test rides &amp; delivery</div>
+            <div class="delivery">
+              <span class="pill">Rochester — test rides</span>
+              <span class="pill">Buffalo — delivery</span>
+              <span class="pill">Syracuse — delivery</span>
+              <span class="pill">NYC — delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">MAXWELL</div>
+        <p style="margin-top:12px;max-width:36ch;font-size:0.94rem;">Lightweight electric bikes, designed and assembled in Rochester, NY — built for commuters, tourers, and canal cruisers.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="stoic.html">The Stoic</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a href="mailto:hello@maxwellmotorbikes.com">hello@maxwellmotorbikes.com</a>
+        <a href="contact.html">Book a test ride</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>© <span id="year">2026</span> Maxwell Motorbikes · Rochester, NY</span>
+      <span>36 lb · Class 1 · Erie Canal approved</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
