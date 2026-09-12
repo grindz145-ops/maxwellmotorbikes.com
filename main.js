@@ -9,7 +9,7 @@
 
 const SITE = {
   productName: "Maxwell Stoic",
-  price: 849,
+  price: 950,
   // Colors confirmed by Troy 2026-09-12
   colors: [
     { name: "Jet Black", swatch: "#141414" },
