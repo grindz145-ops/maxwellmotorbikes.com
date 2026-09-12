@@ -15,16 +15,23 @@ const SITE = {
     { name: "Jet Black", swatch: "#141414" },
     { name: "Grey-Blu", swatch: "#6e7f8d" },
   ],
-  sizes: ["Size 1 — fits 5'3\" to 5'9\"", "Size 2 — fits 5'9\" to 6'2\""],
-  // TODO: paste Stripe Payment Links here
+  sizes: [
+    { name: "Small", detail: "Fits 5'3\" to 5'9\"" },
+    { name: "Large", detail: "Fits 5'9\" to 6'2\"" },
+  ],
+  // TODO: paste Stripe Payment Links here (one per size, or a single default link)
   stripeLinks: {
     default: "",
+    small: "",
+    large: "",
   },
   formspreeId: "YOUR_ID",
 };
 
 // Mobile nav
 document.addEventListener("DOMContentLoaded", () => {
+  let selectedSizeIndex = 0; // 0 = Small, 1 = Large
+
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector(".nav-links");
   if (toggle && links) {
@@ -61,10 +68,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if (colorName) colorName.textContent = SITE.colors[0].name;
   }
 
+  // Size selector
+  const sizeWrap = document.getElementById("size-swatches");
+  const sizeName = document.getElementById("size-name");
+  if (sizeWrap) {
+    SITE.sizes.forEach((s, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "swatch" + (i === 0 ? " active" : "");
+      b.innerHTML = `<strong>${s.name}</strong><span style="display:block;font-weight:400;font-size:0.82rem;color:var(--ink-soft);">${s.detail}</span>`;
+      b.addEventListener("click", () => {
+        sizeWrap.querySelectorAll(".swatch").forEach((x) => x.classList.remove("active"));
+        b.classList.add("active");
+        selectedSizeIndex = i;
+        if (sizeName) sizeName.textContent = `${s.name} — ${s.detail}`;
+      });
+      sizeWrap.appendChild(b);
+    });
+    if (sizeName) sizeName.textContent = `${SITE.sizes[0].name} — ${SITE.sizes[0].detail}`;
+  }
+
   // Buy buttons
   document.querySelectorAll("[data-buy]").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const link = SITE.stripeLinks.default;
+      const sizeKey = selectedSizeIndex === 1 ? "large" : "small";
+      const link = SITE.stripeLinks[sizeKey] || SITE.stripeLinks.default;
       if (!link) {
         e.preventDefault();
         alert("Online checkout is coming soon — message us to order the Stoic today.");
