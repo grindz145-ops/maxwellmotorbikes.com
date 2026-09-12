@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Maxwell Stoic — Lightweight Class 1 E-Bike | Maxwell Motorbikes</title>
+  <meta name="description" content="The Maxwell Stoic: a 36 lb Class 1 electric bike. 250W pedal assist to 20 mph, 60+ mile range, single speed. $849. Designed in Rochester, NY.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">MAXWELL<small>MOTORBIKES</small></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="stoic.html">The Stoic</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="#buy">Buy — $849</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="product">
+    <div>
+      <div class="gallery-main">
+        <img id="gallery-main-img" src="photo1.jpg" alt="Maxwell Stoic e-bike">
+      </div>
+      <div class="thumbs">
+        <img class="active" src="photo1.jpg" data-full="photo1.jpg" alt="Stoic on bridge">
+        <img src="photo2.jpg" data-full="photo2.jpg" alt="Stoic in the city">
+        <img src="web2.jpg" data-full="web2.jpg" alt="Stoic studio">
+        <img src="web3.jpg" data-full="web3.jpg" alt="Stoic detail">
+        <img src="web4.jpg" data-full="web4.jpg" alt="Stoic studio side">
+        <img src="orig3.jpg" data-full="orig3.jpg" alt="Stoic indoor">
+        <img src="orig5.jpg" data-full="orig5.jpg" alt="Stoic on trail">
+        <img src="orig6.jpg" data-full="orig6.jpg" alt="Stoic street">
+        <img src="orig4.jpg" data-full="orig4.jpg" alt="Stoic touring">
+      </div>
+      <div class="video-block" style="margin-top:18px;">
+        <video src="teaser.mp4" controls preload="metadata" playsinline></video>
+      </div>
+    </div>
+
+    <div class="product-info" id="buy">
+      <div class="eyebrow">Maxwell Motorbikes</div>
+      <h1>The Maxwell Stoic</h1>
+      <p class="section-sub">A lightweight commuter, a light tourer, and the ultimate canal cruiser — in one 36&nbsp;lb Class&nbsp;1 e-bike.</p>
+      <div class="price">$849</div>
+      <div class="price-note">Free test rides in Rochester · Delivery to Buffalo, Syracuse &amp; NYC</div>
+
+      <div class="opt-label">Color — <span id="color-name"></span></div>
+      <div class="swatches" id="swatches"><!-- filled by main.js --></div>
+
+      <div class="opt-label">Size</div>
+      <p class="fine">Two sizes cover riders <strong>5'3" to 6'2"</strong>. Not sure which fits? <a href="contact.html">Ask us</a> — we'll get you on the right one.</p>
+
+      <div class="buy-box">
+        <!-- TODO: paste your Stripe Payment Link into SITE.stripeLinks.default in main.js -->
+        <a class="btn" data-buy href="#">Buy the Stoic — $849</a>
+        <a class="btn btn-outline" href="contact.html">Book a test ride first</a>
+        <p class="fine">Secure checkout via Stripe. Rack and full-coverage fenders included. Assembled and tuned before delivery.</p>
+      </div>
+
+      <table class="spec-table">
+        <tr><th>Motor</th><td>250W hub motor, Class 1 pedal assist (no throttle)</td></tr>
+        <tr><th>Top assisted speed</th><td>20 mph</td></tr>
+        <tr><th>Battery</th><td>360Wh — ~20 mi on high assist, 60+ mi on low</td></tr>
+        <tr><th>Weight</th><td>36 lb</td></tr>
+        <tr><th>Frame / wheels</th><td>Aluminum frame, 700c wheels</td></tr>
+        <tr><th>Drivetrain</th><td>Single speed — no gears, no fuss</td></tr>
+        <tr><th>Included</th><td>Rear rack, full-coverage fenders</td></tr>
+        <tr><th>Sizes</th><td>Two sizes — fits riders 5'3" to 6'2"</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="eyebrow">Why the Stoic</div>
+    <h2 class="section-title">The e-bike that doesn't look like one.</h2>
+    <p class="section-sub" style="margin-top:16px;">No bulky battery bolted to the frame. No twist throttle. The Stoic hides its assist so well that, as Treehugger put it, <em>"you really don't know it is an e-bike at all."</em> What you get is a normal, beautiful bicycle — that happens to flatten every hill between you and the canal.</p>
+    <div style="margin-top:28px;">
+      <a class="btn" data-buy href="#">Buy the Stoic — $849</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">MAXWELL</div>
+        <p style="margin-top:12px;max-width:36ch;font-size:0.94rem;">Lightweight electric bikes, designed and assembled in Rochester, NY — built for commuters, tourers, and canal cruisers.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="stoic.html">The Stoic</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a href="mailto:hello@maxwellmotorbikes.com">hello@maxwellmotorbikes.com</a>
+        <a href="contact.html">Book a test ride</a>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>© <span id="year">2026</span> Maxwell Motorbikes · Rochester, NY</span>
+      <span>36 lb · Class 1 · Erie Canal approved</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
