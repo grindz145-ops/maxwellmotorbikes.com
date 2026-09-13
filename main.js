@@ -23,9 +23,9 @@ const SITE = {
   ],
   // TODO: paste Stripe Payment Links here (one per size, or a single default link)
   stripeLinks: {
-    default: "",
-    small: "",
-    large: "",
+    default: "https://buy.stripe.com/9B67sEepmh0JeNa0bB2Ji00",
+    small: "https://buy.stripe.com/9B67sEepmh0JeNa0bB2Ji00",
+    large: "https://buy.stripe.com/dRm28kdli6m50Wk5vV2Ji01",
   },
   // Contact form destination — submissions are emailed here via FormSubmit
   // (free, no account). Change this address any time; the first submission to
