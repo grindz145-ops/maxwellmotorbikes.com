@@ -18,8 +18,8 @@ const SITE = {
     { name: "Grey-Blu", swatch: "#6e7f8d" },
   ],
   sizes: [
-    { name: "Small", detail: "Fits 5'3\" to 5'9\"" },
-    { name: "Large", detail: "Fits 5'9\" to 6'2\"" },
+    { name: "Small", detail: "Fits 5'4\" to 5'8\"" },
+    { name: "Large", detail: "Fits 5'8\" to 6'1\"" },
   ],
   // TODO: paste Stripe Payment Links here (one per size, or a single default link)
   stripeLinks: {
