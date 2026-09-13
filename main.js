@@ -1,10 +1,12 @@
 /* Maxwell Motorbikes — site config + interactions.
    TODO (launch checklist):
-   1. STRIPE_LINKS — paste your Stripe Payment Links (one per color/size if you
+   1. COLORS below — set the two real color names once confirmed.
+   2. STRIPE_LINKS — paste your Stripe Payment Links (one per color/size if you
       want separate SKUs, or a single link). Create them at dashboard.stripe.com
       > Payments > Payment Links. Until then the Buy buttons show a notice.
-   2. FORMSPREE_ID — contact form posts to Formspree; replace "YOUR_ID" with
-      your form ID from formspree.io (free tier works fine).
+   3. CONTACT FORM — wired to FormSubmit (free, no account): submissions are
+      emailed to SITE.formEmail. NOTE: the first-ever submission triggers a
+      one-time activation email to that address — click the link and it's live.
 */
 
 const SITE = {
@@ -25,7 +27,10 @@ const SITE = {
     small: "",
     large: "",
   },
-  formspreeId: "YOUR_ID",
+  // Contact form destination — submissions are emailed here via FormSubmit
+  // (free, no account). Change this address any time; the first submission to
+  // a new address needs a one-time activation click from the email FormSubmit sends.
+  formEmail: "info@maxwellmotorbikes.com",
 };
 
 // Mobile nav
@@ -102,18 +107,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Contact form
+  // Contact form — submits via FormSubmit (free, no account), which emails
+  // each submission to SITE.formEmail. First-ever submission triggers a
+  // one-time activation email to that address; click the link and it's live.
   const form = document.getElementById("contact-form");
   if (form) {
-    if (SITE.formspreeId === "YOUR_ID") {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        document.getElementById("form-note").textContent =
-          "Thanks! The contact form isn't wired up yet — email us directly at hello@maxwellmotorbikes.com and we'll get right back to you.";
-      });
-    } else {
-      form.setAttribute("action", `https://formspree.io/f/${SITE.formspreeId}`);
-    }
+    form.setAttribute("action", `https://formsubmit.co/${SITE.formEmail}`); // no-JS fallback
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const note = document.getElementById("form-note");
+      const btn = form.querySelector('button[type="submit"]');
+      if (note) note.textContent = "Sending…";
+      if (btn) btn.disabled = true;
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${SITE.formEmail}`, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form),
+        });
+        if (!res.ok) throw new Error("send failed");
+        form.reset();
+        if (note) note.textContent = "Thanks — your message is on its way. We'll get back to you shortly.";
+      } catch (err) {
+        if (note) note.textContent = "Hmm, that didn't go through — email us directly at info@maxwellmotorbikes.com.";
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    });
   }
 
   // Footer year
