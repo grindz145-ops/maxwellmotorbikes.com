@@ -20,7 +20,7 @@
       <a href="index.html">Home</a>
       <a href="stoic.html">The Stoic</a>
       <a href="contact.html">Contact</a>
-      <a class="btn" href="stoic.html#buy">Buy — $849</a>
+      <a class="btn" href="stoic.html#buy">Buy — $950</a>
     </div>
   </div>
 </nav>
@@ -34,6 +34,9 @@
     <div class="contact-grid">
       <div>
         <form id="contact-form" method="POST">
+          <input type="hidden" name="_subject" value="Maxwell Motorbikes — website inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" required>
@@ -59,14 +62,15 @@
           <button class="btn" type="submit">Send message</button>
           <p class="fine" id="form-note" style="margin-top:12px;"></p>
         </form>
-        <!-- To wire up the form: create a free form at formspree.io and put the
-             form ID into SITE.formspreeId in main.js -->
+        <!-- Contact form is wired to FormSubmit (free, no account): submissions
+             are emailed to the address in SITE.formEmail in main.js. The first
+             submission triggers a one-time activation email — click the link. -->
       </div>
 
       <div>
         <div class="contact-card">
           <h3 style="font-family:var(--font-display);margin-bottom:12px;">Direct</h3>
-          <p><strong>Email:</strong> <a href="mailto:hello@maxwellmotorbikes.com">hello@maxwellmotorbikes.com</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@maxwellmotorbikes.com">info@maxwellmotorbikes.com</a></p>
           <p style="margin-top:8px;"><strong>Based in:</strong> Rochester, NY</p>
           <div style="margin-top:20px;">
             <div class="opt-label" style="margin-top:0;">Test rides &amp; delivery</div>
@@ -98,7 +102,7 @@
       </div>
       <div>
         <h4>Get in touch</h4>
-        <a href="mailto:hello@maxwellmotorbikes.com">hello@maxwellmotorbikes.com</a>
+        <a href="mailto:info@maxwellmotorbikes.com">info@maxwellmotorbikes.com</a>
         <a href="contact.html">Book a test ride</a>
       </div>
     </div>
